@@ -42,12 +42,6 @@ import com.example.utils.CommonUtils;
 public class MainActivity extends Activity implements EstimationListener {
 
 
-    // Values for email and password at the time of the login attempt.
-    private String mEmail;
-    private String mPassword;
-    private String mPasswordHashed;
-
-
 
     private WifiManager wifiManager;
     private WifiReceiver wifiReceiver;
@@ -91,7 +85,7 @@ public class MainActivity extends Activity implements EstimationListener {
         String WebService = getString(R.string.IndoorLocalizationService);
         String url = CommonUtils.getAbsoluteURL(IP, PORT, WebService);
         slideWindowProc = new SlideWindowProc(this);
-        slideWindowProc.url = url;
+//        slideWindowProc.url = url;
         //////////////////////////////////////////////
         registerReceiver(wifiReceiver, new IntentFilter(
                 WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
@@ -195,8 +189,10 @@ public class MainActivity extends Activity implements EstimationListener {
 
         if (p == null) {
             Log.i("point", "This position has not been explored!");
+            text.setText("This position has not been explored!");
         } else {
             text.setText(p.areaId+":"+p.toString()+count++);
+            Log.i("point", p.areaId+":"+p.toString()+count++);
             cPoint.x = p.x;
             cPoint.y = p.y;
             cPoint.areaId = p.areaId;
