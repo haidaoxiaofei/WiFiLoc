@@ -7,6 +7,7 @@
     <string name="IP">http://lccpu4.cse.ust.hk</string>
     <string name="img_url">/phpLearn/indoorFiles/*areaId*/map.jpg</string>
     <string name="PORT">80</string>
-    <string name="IndoorLocalizationService">/phpLearn/index.php/welcome/IndoorLocalization</string>
-
+    <string name="IndoorLocalizationService">/indoorService/index.php/welcome/IndoorLocalization</string>
+	<!--<string name="IndoorLocalizationService">/php/indoorService/index.php/welcome/IndoorLocalization</string>  -->
+    
 </resources>

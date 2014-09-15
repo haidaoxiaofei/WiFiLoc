@@ -20,21 +20,23 @@ import com.example.utils.MyJsonResponse;
 import com.example.utils.ScanResultBuffer;
 import com.google.gson.Gson;
 
-public class SlideWindowProc {
+public class SlideWindowProc{
 	public static final int WINDOW_SIZE = 5;
 	public static final int SLIDE_SIZE = 2;
 	private int count = 0;//ap count
 	private EstimationListener listener;
 	private Map<Long, Integer> macMap = new HashMap<Long, Integer>();
 	private List<ArrayList<Integer>> signals = new ArrayList<ArrayList<Integer>>();
-    String url = "http://lccpu4.cse.ust.hk/phpLearn/index.php/welcome/IndoorLocalization";
+    private String url;
+    
     float medianSignals[] = null;
     long macList[] = null;
     public boolean isLocalizating = false;
 
 
-	public SlideWindowProc(EstimationListener listener) {
+	public SlideWindowProc(EstimationListener listener, String url) {
 		super();
+		this.url = url;
 		this.listener = listener;
 	}
 

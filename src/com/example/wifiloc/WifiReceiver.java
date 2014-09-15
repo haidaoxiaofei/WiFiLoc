@@ -24,8 +24,8 @@ public class WifiReceiver extends BroadcastReceiver {
     private long lastWiFiTS;// timestamp for last wifi record
     Handler mHandler = new Handler();
     private EstimationListener listener;
-    private static final String[] wifi_names = {"The_Dragon","VLDB2014","WiFiSong"};
-//    private static final String[] wifi_names = {"sMobileNet","Universities WiFi","Y5ZONE","Alumni","eduroam","PCCW"};
+//    private static final String[] wifi_names = {"The_Dragon","VLDB2014","WiFiSong"};
+    private static final String[] wifi_names = {"sMobileNet","Universities WiFi","Y5ZONE","Alumni","eduroam","PCCW"};
 //    private static final String[] wifi_names = {"epfl","public-epfl","eduroam","Swisscom_Auto_Login"};
     private boolean isFocus(String name) {
         for (int i = 0; i < wifi_names.length; i++) {

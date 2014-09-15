@@ -84,7 +84,7 @@ public class MainActivity extends Activity implements EstimationListener {
         String PORT = getString(R.string.PORT);
         String WebService = getString(R.string.IndoorLocalizationService);
         String url = CommonUtils.getAbsoluteURL(IP, PORT, WebService);
-        slideWindowProc = new SlideWindowProc(this);
+        slideWindowProc = new SlideWindowProc(this, url);
 //        slideWindowProc.url = url;
         //////////////////////////////////////////////
         registerReceiver(wifiReceiver, new IntentFilter(
@@ -192,7 +192,7 @@ public class MainActivity extends Activity implements EstimationListener {
             text.setText("This position has not been explored!");
         } else {
             text.setText(p.areaId+":"+p.toString()+count++);
-            Log.i("point", p.areaId+":"+p.toString()+count++);
+            Log.i("point", p.areaId+":"+p.toString()+count);
             cPoint.x = p.x;
             cPoint.y = p.y;
             cPoint.areaId = p.areaId;
